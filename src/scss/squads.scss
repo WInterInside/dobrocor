@@ -1,0 +1,52 @@
+.squads {
+	padding: 36px 0;
+	border-top: 2px solid #809C8D;
+
+	@media only screen and (max-width: 1300px) {
+		padding: 16px 0;
+	}
+
+	& h2 {
+		font-size: 36px;
+		font-weight: 600;
+		line-height: 39.6px;
+		margin-bottom: 30px;
+
+		@media only screen and (max-width: 1300px) {
+			font-size: 26px;
+			line-height: 39.6px;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		gap: 14px;
+		flex-wrap: wrap;
+		width: 100%;
+		justify-content: center;
+	}
+
+	&__item {
+		flex-shrink: 0;
+		width: calc(12% - 7px);
+		aspect-ratio: 1 / 1;
+		padding: 15px;
+		position: relative;
+		border: 1px solid #D9D9D9;
+		border-radius: 6px;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@media only screen and (max-width: 1200px) {
+			width: calc(24% - 7px);
+			padding: 10px;
+		}
+
+		@media only screen and (max-width: 600px) {
+			width: calc(31% - 7px);
+		}
+	}
+}

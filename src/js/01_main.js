@@ -99,7 +99,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // });
 
 $(document).ready(function () {
-	var $slider = $('.docs__slider');
+	var $slider = $('.wishes__slider');
 
 	// Инициализация слайдера
 	$slider.slick({
@@ -109,20 +109,30 @@ $(document).ready(function () {
 		slidesToShow: 5,
 		arrows: false, // Отключаем встроенные стрелки Slick Slider
 		centerMode: true, // Центрирование слайдов
-		variableWidth: true, // Разрешаем разные ширины слайдов
 		focusOnSelect: true, // Фокусировка на выбранном слайде
-		centerPadding: '10px', // Отступы между слайдами
 		autoplay: true,       // Включаем автоплей
 		autoplaySpeed: 3000,  // Интервал смены слайдов – 3 секунды
 		responsive: [
 			{
-				breakpoint: 1000, // При ширине экрана 1000 пикселей
+				breakpoint: 1400, // При ширине экрана 1000 пикселей
+				settings: {
+					slidesToShow: 4 // Показываем 3 слайда
+				}
+			},
+			{
+				breakpoint: 1200, // При ширине экрана 1000 пикселей
 				settings: {
 					slidesToShow: 3 // Показываем 3 слайда
 				}
 			},
 			{
 				breakpoint: 900, // При ширине экрана 600 пикселей
+				settings: {
+					slidesToShow: 2 // Показываем 2 слайда
+				}
+			},
+			{
+				breakpoint: 600, // При ширине экрана 600 пикселей
 				settings: {
 					slidesToShow: 1 // Показываем 2 слайда
 				}
@@ -131,11 +141,57 @@ $(document).ready(function () {
 	});
 
 	// Обработчики для кнопок
-	$('.prev').on('click', function () {
+	$('.wishes__controls .prev').on('click', function() {
 		$slider.slick('slickPrev');
 	});
 
-	$('.next').on('click', function () {
+	$('.wishes__controls .next').on('click', function() {
+		$slider.slick('slickNext');
+	});
+});
+
+$(document).ready(function () {
+	var $slider = $('.analitics__slider');
+
+	// Инициализация слайдера
+	$slider.slick({
+		dots: false,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 4,
+		arrows: false, // Отключаем встроенные стрелки Slick Slider
+		centerMode: true, // Центрирование слайдов
+		focusOnSelect: true, // Фокусировка на выбранном слайде
+		autoplay: true,       // Включаем автоплей
+		autoplaySpeed: 3000,  // Интервал смены слайдов – 3 секунды
+		responsive: [
+			{
+				breakpoint: 1200, // При ширине экрана 1000 пикселей
+				settings: {
+					slidesToShow: 3 // Показываем 3 слайда
+				}
+			},
+			{
+				breakpoint: 900, // При ширине экрана 600 пикселей
+				settings: {
+					slidesToShow: 2 // Показываем 2 слайда
+				}
+			},
+			{
+				breakpoint: 600, // При ширине экрана 600 пикселей
+				settings: {
+					slidesToShow: 1 // Показываем 1 слайда
+				}
+			}
+		]
+	});
+
+	// Обработчики для кнопок
+	$('.analitics__controls .prev').on('click', function() {
+		$slider.slick('slickPrev');
+	});
+
+	$('.analitics__controls .next').on('click', function() {
 		$slider.slick('slickNext');
 	});
 });
