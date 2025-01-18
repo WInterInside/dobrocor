@@ -10,7 +10,7 @@
 	&__header {
 		display: flex;
 		justify-content: space-between;
-		align-items: center;		
+		align-items: center;
 		margin-bottom: 30px;
 
 		@media only screen and (max-width: 1300px) {
@@ -35,7 +35,7 @@
 		@media (hover: hover) {
 			&:hover{
 				.wishes__card {
-			
+
 					& h3 {
 						color: #EE8021;
 					}
@@ -126,13 +126,13 @@
 	&__controls {
 		display: flex;
 		gap: 15px;
-		
+
 		.prev,
 		.next {
 			width: 42px;
 			height: 42px;
 			cursor: pointer;
-			
+
 			background-color: transparent;
 			transition: background-color .3s;
 
@@ -156,11 +156,11 @@
 		padding: 50px 0;
 		background-color: #809C8D;
 	}
-	
+
 	.slick-slide {
 		height: 300px !important;
 	}
-	
+
 	.slick-track {
 		display: flex !important;
 		align-items: center !important;

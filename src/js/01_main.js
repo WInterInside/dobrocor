@@ -196,6 +196,28 @@ $(document).ready(function () {
 	});
 });
 
+$(document).ready(function () {
+	var $slider = $('.news__slider');
+
+	// Инициализация слайдера
+	$slider.slick({
+		dots: false,
+		infinite: true,
+		speed: 300,
+		arrows: false,
+		slidesToShow: 1
+	});
+
+	// Обработчики для кнопок
+	$('.news__controls .prev').on('click', function() {
+		$slider.slick('slickPrev');
+	});
+
+	$('.news__controls .next').on('click', function() {
+		$slider.slick('slickNext');
+	});
+});
+
 $(document).ready(function() {
     $('.footer__up').on('click', function(event) {
         event.preventDefault();
