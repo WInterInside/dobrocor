@@ -238,7 +238,6 @@
   -ms-flex-negative: 0;
       flex-shrink: 0;
   position: relative;
-  background-color: #144c66;
   height: auto;
   width: 343px;
   overflow: hidden;
@@ -254,10 +253,7 @@
 }
 @media only screen and (max-width: 1050px) {
   .banner__img {
-    height: 210px;
-    width: 100%;
-    margin: 0 auto;
-    background-color: transparent;
+    display: none;
   }
 }
 .banner__logo {
@@ -1569,6 +1565,9 @@ body .fancybox-content {
 }
 .news aside {
   width: 342px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   border-radius: 6px;
   background-color: #F0F3F2;
   display: -webkit-box;
@@ -1922,7 +1921,7 @@ body .fancybox-content {
     gap: 18px;
   }
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1200px) {
   .news__most-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1942,11 +1941,6 @@ body .fancybox-content {
   gap: 8px;
 }
 @media only screen and (max-width: 1200px) {
-  .news__most-main {
-    width: 60%;
-  }
-}
-@media only screen and (max-width: 900px) {
   .news__most-main {
     width: 100%;
   }
@@ -1977,6 +1971,11 @@ body .fancybox-content {
   position: relative;
   height: 256px;
 }
+@media only screen and (max-width: 1200px) {
+  .news__most-img {
+    height: 300px;
+  }
+}
 .news__most-img img {
   position: absolute;
   inset: 0;
@@ -2001,14 +2000,6 @@ body .fancybox-content {
 }
 @media only screen and (max-width: 1200px) {
   .news__most-list {
-    width: 30%;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-  }
-}
-@media only screen and (max-width: 900px) {
-  .news__most-list {
     width: 100%;
   }
 }
@@ -2018,11 +2009,6 @@ body .fancybox-content {
   -ms-flex-item-align: start;
       align-self: flex-start;
   padding-bottom: 8px;
-}
-@media only screen and (max-width: 1200px) {
-  .news__most-list a {
-    width: 100%;
-  }
 }
 .news__most-list a h4 {
   overflow: hidden;
