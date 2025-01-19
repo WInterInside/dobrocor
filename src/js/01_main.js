@@ -226,3 +226,60 @@ $(document).ready(function() {
         }, 500); // Время анимации в миллисекундах (здесь 500 мс)
     });
 });
+
+$(document).ready(function() {
+    // Находим все ссылки внутри указанного div'а и скрываем их
+    var links = $('.weekdays__wrapper aside h2:contains("#ИсторияДобровольца")').next('div').find('a');
+    
+    // Скрываем все ссылки, кроме первых десяти
+    links.slice(4).addClass('is-hidden');
+
+    // Обработчик для кнопки "Смотреть еще"
+    $('.show-stories.button.button--light').on('click', function() {
+        if ($(this).text().trim() === 'Смотреть еще') {
+            // Показываем все скрытые ссылки
+            links.removeClass('is-hidden');
+            $(this).text('Скрыть'); // Меняем текст кнопки
+        } else {
+            // Скрываем все ссылки, кроме первых десяти
+            links.slice(4).addClass('is-hidden');
+            $(this).text('Смотреть еще'); // Возвращаем исходный текст кнопки
+        }
+    });
+});
+
+$(document).ready(function() {
+    // Функция для определения количества элементов, которые будут скрыты
+    function hideElements() {
+        const width = window.innerWidth || document.documentElement.clientWidth;
+        let startIndex = 12;
+
+        if (width < 1000) { // Условие для изменения порога в зависимости от ширины экрана
+            startIndex = 6;
+        }
+
+        // Скрываем ссылки, начиная с определенного индекса
+        $('.weekdays__slide-wrapper a').slice(startIndex).addClass('is-hidden');
+    }
+
+    // Вызываем функцию сразу после загрузки страницы
+    hideElements();
+
+    // Обновляем состояние при изменении размера окна
+    $(window).resize(hideElements);
+
+    // Обработчик для кнопки с классом show-all-weekdays
+    $('.show-all-weekdays').on('click', function() {
+        var $this = $(this);
+        
+        if ($('.weekdays__slide-wrapper a.is-hidden').length > 0) {
+            // Если есть скрытые элементы, показываем их и меняем текст кнопки
+            $('.weekdays__slide-wrapper a.is-hidden').removeClass('is-hidden');
+            $this.text('Скрыть');
+        } else {
+            // Если все элементы видны, скрываем их и возвращаем исходный текст кнопки
+            hideElements(); // Используем ту же функцию для скрытия элементов
+            $this.text('Смотреть еще');
+        }
+    });
+});

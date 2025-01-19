@@ -1,0 +1,352 @@
+.weekdays {
+	// margin-bottom: 50px;
+	padding: 36px 0;
+	border-top: 2px solid #809C8D;
+
+	&__wrapper {
+		display: flex;
+		gap: 24px;
+
+		@media only screen and (max-width: 1000px) {
+			flex-direction: column-reverse;
+		}
+	}
+
+	& aside {
+		display: flex;
+		flex-direction: column;
+
+		& h2 {
+			font-size: 28px;
+			font-weight: 600;
+			line-height: 30.8px;
+			margin-bottom: 36px;
+		}
+
+		& div {
+			width: 342px;
+			flex-grow: 1;
+			border-radius: 6px;
+			background-color: #F0F3F2;
+			display: flex;
+			flex-direction: column;
+			gap: 28px;
+			padding: 20px 10px 20px 20px;
+
+			@media only screen and (max-width: 1300px) {
+				width: 300px;
+				padding: 10px;
+				gap: 18px;
+			}
+
+			@media only screen and (max-width: 1000px) {
+				flex-direction: row;
+				overflow-x: scroll;
+				gap: 18px;
+				width: auto;
+			}
+
+			& a {
+				color: #3F3F3F;
+				padding-bottom: 1rem;
+				border-bottom: 1px solid #D9D9D9;
+
+				@media only screen and (max-width: 1000px) {
+					width: 250px;
+					flex-shrink: 0;
+				}
+
+				@media (hover: hover) {
+					&:hover{
+						& h3 {
+							color: #EE8021;
+						}
+					}
+				}
+
+				&.is-hidden {
+					display: none;
+
+					@media only screen and (max-width: 1000px) {
+						display: inline-block
+					}
+				}
+
+			}
+
+			& span {
+				font-size: 14px;
+				font-weight: 400;
+				line-height: 22.4px;
+				text-align: left;
+				color: #6F6D70;
+			}
+
+			& p {
+				font-size: 14px;
+				font-weight: 400;
+				line-height: 22.4px;
+				text-align: left;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp: 3; /* Количество строк */
+				-webkit-box-orient: vertical;
+			}
+
+			& h3 {
+				font-size: 14px;
+				font-weight: 500;
+				line-height: 24px;
+				text-align: left;
+				transition: color .3s;
+			}
+
+			.button {
+				max-width: max-content;
+				margin-top: auto;
+				align-self: center;
+
+				@media only screen and (max-width: 1000px) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&__content {
+		width: calc(100% - 320px);
+
+		@media only screen and (max-width: 1000px) {
+			width: 100%;
+		}
+	}
+
+	&__controls {
+		display: flex;
+		gap: 15px;
+
+		.prev,
+		.next {
+			width: 42px;
+			height: 42px;
+			cursor: pointer;
+
+			background-color: transparent;
+			transition: background-color .3s;
+
+			@media (hover: hover) {
+				&:hover{
+					background-color: #809c8d54;
+				}
+			}
+		}
+
+		.next {
+			transform: rotate(180deg);
+		}
+
+		@media (max-width: 950px) {
+			display: none;
+		}
+	}
+
+	&__info {
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 22.4px;
+		color: #6F6D70;
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+
+		& i {
+			font-style: normal;
+		}
+
+		& span:nth-child(2) {
+			display: flex;
+			// align-items: center;
+			gap: 8px;
+		}
+	}
+
+	&__img {
+		position: relative;
+		border-radius: 12px;
+		overflow: hidden;
+		height: 170px;
+		width: 100%;
+		margin-bottom: 8px;
+
+		& img:first-child {
+			position: absolute;
+			inset: 0;
+			height: 100%;
+			width: 100%;
+			transition: transform .3s;
+			object-fit: cover;
+		}
+
+		& img:nth-child(2) {
+			position: absolute;
+			top: calc(50% - 18px);
+			left: calc(50% - 18px);
+			height: 36px;
+			width: 36px;
+			transition: transform .3s;
+		}
+	}
+
+	&__category {
+		display: flex;
+		gap: 8px;
+		margin-top: 8px;
+
+		& span {
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 22.4px;
+			text-align: left;
+			color: #6F6D70;
+			padding: 0 10px;
+			border: 1px solid #6F6D70;
+			border-radius: 3px;
+		}
+	}
+
+	&__important {
+		padding-bottom: 20px;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+
+		&-header {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 22px;
+			gap: 32px;
+
+			@media only screen and (max-width: 1400px) {
+				gap: 20px;
+			}
+
+			& h2 {
+				font-size: 36px;
+				font-weight: 600;
+				line-height: 39.6px;
+
+				@media only screen and (max-width: 1400px) {
+					font-size: 32px;
+					font-weight: 600;
+					line-height: 34.6px;
+				}
+
+				@media only screen and (max-width: 100px) {
+					font-size: 24px;
+					font-weight: 600;
+					line-height: 30.6px;
+				}
+			}
+		}
+	}
+
+	&__tags {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 10px;
+
+		& span {
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 25.6px;
+			background-color: #3F3F3F;
+			color: #fff;
+			padding: 14px 24px;
+			border-radius: 3px;
+
+			@media only screen and (max-width: 1400px) {
+				font-size: 14px;
+				font-weight: 500;
+				line-height: 20px;
+				background-color: #3F3F3F;
+				color: #fff;
+				padding: 8px;
+			}
+		}
+	}
+
+	&__slide {
+		display: flex;
+		flex-direction: column;
+		
+		.button {
+			max-width: max-content;
+			align-self: center;
+			margin-top: 20px;
+		}
+
+		&-wrapper {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+			padding-bottom: 20px;
+			border-bottom: 1px solid #D9D9D9;
+
+			& a {
+				display: flex;
+				flex-direction: column;
+				width: calc(24% - 20px / 2);
+				flex-grow: 1;
+				height: 302px;
+
+				@media only screen and (max-width: 1300px) {
+					width: calc(32% - 20px / 2);
+				}
+
+				@media only screen and (max-width: 1000px) {
+					width: calc(49% - 20px / 2);
+				}
+
+				@media only screen and (max-width: 500px) {
+					width: 100%;
+				}
+
+				@media (hover: hover) {
+					&:hover{
+						& h3 {
+							color: #EE8021;
+						}
+						& .weekdays__img img:first-child {
+							transform: scale(1.1);
+						}
+					}
+				}
+
+				&.is-hidden {
+					display: none;
+				}
+			}
+
+			& h3 {
+				font-size: 14px;
+				font-weight: 500;
+				line-height: 19.6px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp: 3; /* Количество строк */
+				-webkit-box-orient: vertical;
+				color: #3F3F3F;
+				margin-bottom: 8px;
+				transition: color .3s;
+			}
+		}
+	}
+}
