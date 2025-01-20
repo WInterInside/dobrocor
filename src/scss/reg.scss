@@ -1,0 +1,96 @@
+.reg {
+	position: relative;
+	padding: 36px 0 0 0;
+	border-top: 2px solid #809C8D;
+
+	@media only screen and (max-width: 1300px) {
+		padding: 16px 0 0 0;
+	}
+
+	& h2 {
+		font-size: 36px;
+		font-weight: 600;
+		line-height: 39.6px;
+		margin-bottom: 30px;
+		text-align: center;
+		& span {
+			color: #44584D;
+			text-decoration: underline;
+		}
+
+		@media only screen and (max-width: 1300px) {
+			font-size: 26px;
+			line-height: 39.6px;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__list {
+		width: 100%;
+		height: 300px;
+		overflow-y: scroll;
+
+		/* Стилизация полосы прокрутки */
+		&::-webkit-scrollbar {
+			width: 6px; /* Ширина полосы прокрутки */
+		}
+
+		/* Стилизация индикатора прокрутки */
+		&::-webkit-scrollbar-thumb {
+			background-color: #809C8D; /* Цвет индикатора прокрутки */
+			border-radius: 10px; /* Закругление углов индикатора */
+		}
+
+		/* Стилизация фона полосы прокрутки */
+		&::-webkit-scrollbar-track {
+			background-color: #F0F3F2; /* Цвет фона полосы прокрутки */
+		}
+
+		& h3 {
+			font-size: 15px;
+			font-weight: 500;
+			line-height: 24px;
+			transition: opacity .3s;
+		}
+
+		& span {
+			display: inline-block;
+			white-space: nowrap;
+			color: #6F6D70;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 22.4px;
+		}
+
+		& div {
+			display: flex;
+			align-items: center;
+		}
+
+		& i {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 16px;
+			height: 16px;
+			margin: 0 20px;
+		}
+
+		& a {
+			display: flex;
+			align-items: flex-start;
+			color: #3F3F3F;
+			padding-bottom: 1rem;
+			border-bottom: 1px solid #CECECE;
+			margin-bottom: 16px;
+
+			@media (hover: hover) {
+				&:hover {
+					& h3 {
+						opacity: .85;
+					}
+				}
+			}
+		}
+	}
+}

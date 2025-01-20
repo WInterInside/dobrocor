@@ -7,10 +7,40 @@
 		padding: 16px 0;
 	}
 
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 24px;
+
+		@media only screen and (max-width: 1300px) {
+			gap: 14px;
+		}
+
+		& a {
+			width: calc(24% - 24px / 2);
+
+			@media only screen and (max-width: 1300px) {
+				width: calc(32% - 1px / 2);
+			}
+
+			@media only screen and (max-width: 1300px) {
+				width: calc(50% - 14px / 2);
+			}
+
+			@media only screen and (max-width: 600px) {
+				width: 100%;
+			}
+
+			.analitics__card {
+				margin: 0;
+			}
+		}
+	}
+
 	&__header {
 		display: flex;
 		justify-content: space-between;
-		align-items: center;		
+		align-items: center;
 		margin-bottom: 30px;
 
 		@media only screen and (max-width: 1300px) {
@@ -35,7 +65,7 @@
 		@media (hover: hover) {
 			&:hover{
 				.analitics__card {
-			
+
 					& h3 {
 						color: #EE8021;
 					}
@@ -65,7 +95,7 @@
 			font-size: 15px;
 			font-weight: 500;
 			line-height: 24px;
-			
+
 			overflow: hidden;
 			text-overflow: ellipsis;
 			display: -webkit-box;
@@ -118,13 +148,13 @@
 	&__controls {
 		display: flex;
 		gap: 15px;
-		
+
 		.prev,
 		.next {
 			width: 42px;
 			height: 42px;
 			cursor: pointer;
-			
+
 			background-color: transparent;
 			transition: background-color .3s;
 
@@ -143,11 +173,11 @@
 			display: none;
 		}
 	}
-	
+
 	.slick-slide {
 		height: 366px !important;
 	}
-	
+
 	.slick-track {
 		display: flex !important;
 		align-items: center !important;

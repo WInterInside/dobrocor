@@ -3,6 +3,11 @@
 	padding: 36px 0;
 	border-top: 2px solid #809C8D;
 
+	&--top {
+		border-top: none;
+		border-bottom: 2px solid #809C8D;
+	}
+
 	@media only screen and (max-width: 1300px) {
 		padding: 16px 0;
 	}
@@ -100,6 +105,9 @@
 		position: relative;
 		background-color: #F0F3F2;
 
+		&--short {
+			width: 464px;
+		}
 		& img {
 			transform: scale(.8);
 		}

@@ -197,6 +197,46 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
+	var $slider = $('.recomend__slider');
+
+	// Инициализация слайдера
+	$slider.slick({
+		dots: false,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 3,
+		arrows: false, // Отключаем встроенные стрелки Slick Slider
+		centerMode: true, // Центрирование слайдов
+		focusOnSelect: true, // Фокусировка на выбранном слайде
+		autoplay: true,       // Включаем автоплей
+		autoplaySpeed: 3000,  // Интервал смены слайдов – 3 секунды
+		responsive: [
+			{
+				breakpoint: 900, // При ширине экрана 600 пикселей
+				settings: {
+					slidesToShow: 2 // Показываем 2 слайда
+				}
+			},
+			{
+				breakpoint: 600, // При ширине экрана 600 пикселей
+				settings: {
+					slidesToShow: 1 // Показываем 1 слайда
+				}
+			}
+		]
+	});
+
+	// Обработчики для кнопок
+	$('.analitics__controls .prev').on('click', function() {
+		$slider.slick('slickPrev');
+	});
+
+	$('.analitics__controls .next').on('click', function() {
+		$slider.slick('slickNext');
+	});
+});
+
+$(document).ready(function () {
 	var $slider = $('.news__slider');
 
 	// Инициализация слайдера
